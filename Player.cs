@@ -15,11 +15,9 @@ public class player : MonoBehaviour
      // Update is called once per frame
     void FixedUpdate()
     {
-        // Move the player based on the input and speed
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
-                // Get input from the horizontal and vertical axes
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
     }
     void Update()
     {
